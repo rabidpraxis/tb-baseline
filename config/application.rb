@@ -1,6 +1,7 @@
 require File.expand_path('../boot', __FILE__)
 
 require 'rails/all'
+require 'lib/settings'
 
 if defined?(Bundler)
   # If you precompile assets before deploying to production, use this line
@@ -59,5 +60,9 @@ module TbBaseline
 
     # Version of your assets, change this if you want to expire all your assets
     config.assets.version = '1.0'
+
+    # Inheritable settings
+    config.settings = Settings.new
+
   end
 end

@@ -12,8 +12,8 @@ class Settings
   # https://github.com/carlhuda/bundler/blob/master/lib/bundler/settings.rb
   #--------------------------------------------------------------------------
 
-  def initialize(root)
-    @root = root
+  def initialize(root = nil)
+    @root = root || Rails.root
     @default_config  = (File.exist?(default_config_file) && yaml = YAML.load_file(default_config_file)) ? yaml : {}
     @override_config = (File.exist?(override_config_file) && yaml = YAML.load_file(override_config_file)) ? yaml : {}
 
