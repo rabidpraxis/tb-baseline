@@ -18,3 +18,4 @@ end
 gem 'activerecord-jdbcmysql-adapter'
 gem 'jruby-openssl'
 gem 'torquebox'
+gem 'redis-objects'
