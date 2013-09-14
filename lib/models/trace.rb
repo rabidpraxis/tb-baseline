@@ -1,4 +1,4 @@
-class Trace
+class Trace < Base
   include Redis::Objects
 
   value :start_time
