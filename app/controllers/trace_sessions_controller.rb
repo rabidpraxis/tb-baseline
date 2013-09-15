@@ -70,6 +70,11 @@ class TraceSessionsController < ApplicationController
     render text: 'done'
   end
 
-  def delete
+  def destroy
+    ses_id = params[:id]
+    TraceGlobal.new.sessions.delete(ses_id)
+    TraceSession.new(ses_id).delete
+
+    redirect_to trace_sessions_path
   end
 end

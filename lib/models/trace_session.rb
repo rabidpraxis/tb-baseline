@@ -20,4 +20,14 @@ class TraceSession < Base
   def is_final_trace?(count)
     count == final_count.value.to_i
   end
+
+  def delete
+    ids = self.trace_ids.to_a
+
+    Redis.current.multi do
+      ids.each {|id| Trace.new(id).delete }
+    end
+
+    super
+  end
 end

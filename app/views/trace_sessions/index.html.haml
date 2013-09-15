@@ -14,6 +14,7 @@
     %th Missed Order Ct.
     %th Count
     %th Extra
+    %th Actions
   - @sessions.each do |session|
     %tr
       %td= session[0]
@@ -24,3 +25,4 @@
       %td= session[5]
       %td= "#{session[6]} / #{session[7]}"
       %td= session[8]
+      %td= button_to("delete", trace_session_path(session[0]), method: :delete, data: { confirm: "Are you sure?" })
