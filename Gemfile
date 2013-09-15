@@ -13,11 +13,11 @@ end
 
 gem 'activerecord-jdbcmysql-adapter'
 gem 'jruby-openssl'
-gem 'torquebox'
+gem 'torquebox', '3.0.0'
 gem 'redis-objects'
 gem 'haml-rails'
 gem 'sidekiq'
 
 group :development do
-  gem 'torquebox-server'
+  gem 'torquebox-server', '3.0.0'
 end

@@ -4,7 +4,7 @@ TorqueBox.configure do
 
   queue '/queues/trace' do
     processor HornetQProcessTrace do
-      concurrency 1
+      concurrency 12
     end
   end
 end
