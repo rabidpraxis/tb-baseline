@@ -25,7 +25,7 @@ class TraceSessionsController < ApplicationController
   def create
     create_start = Time.now.to_f
 
-    ct   = params[:count].to_i
+    ct   = params[:trace_sessions][:count].to_i
     name = rand(36**4).to_s
 
     TraceGlobal.new.sessions << name
@@ -67,7 +67,8 @@ class TraceSessionsController < ApplicationController
 
     ts.extra_data = "HornetQ - json - concurrency 1"
     ts.load_per_second = ct / (Time.now.to_f - create_start)
-    render text: 'done'
+
+    redirect_to trace_sessions_path
   end
 
   def destroy
