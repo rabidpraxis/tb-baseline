@@ -1,0 +1,26 @@
+:css
+  td {
+    padding-right: 15px
+  }
+
+%h2 Sessions
+%table
+  %tr
+    %th Session ID
+    %th Time Started
+    %th Avg Duration
+    %th Process per/sec
+    %th Load Time (#/per second)
+    %th Missed Order Ct.
+    %th Count
+    %th Extra
+  - @sessions.each do |session|
+    %tr
+      %td= session[0]
+      %td= Time.at(session[1].to_f).to_datetime.to_s(:pretty)
+      %td= session[2]
+      %td= session[3] && session[3].to_f.round(3)
+      %td= session[4] && session[4].to_f.round(3)
+      %td= session[5]
+      %td= "#{session[6]} / #{session[7]}"
+      %td= session[8]
