@@ -65,7 +65,7 @@ class TraceSessionsController < ApplicationController
       trace_ids.each {|id| ts.trace_ids << id}
     end
 
-    ts.extra_data = "HornetQ - json - concurrency 1"
+    ts.extra_data = "HornetQ - json - concurrency 40"
     ts.load_per_second = ct / (Time.now.to_f - create_start)
 
     redirect_to trace_sessions_path
