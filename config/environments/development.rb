@@ -1,5 +1,6 @@
 TbBaseline::Application.configure do
   # Settings specified here will take precedence over those in config/application.rb
+  config.assets.enabled = true
 
   # In the development environment your application's code is reloaded on
   # every request. This slows down response time but is perfect for development
@@ -35,5 +36,5 @@ TbBaseline::Application.configure do
   # Expands the lines which load the assets
   config.assets.debug = true
 
-  config.threadsafe!
+  config.eager_load = false
 end
